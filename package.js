@@ -1,8 +1,8 @@
 Package.describe({
   name: 'roger:accounts-clef',
   summary: 'Login service for Clef accounts',
-  version: '1.0.0',
-  git: ' /* Fill me in! */ '
+  version: '0.0.1',
+  git: 'https://github.com/rzurawicki/meteor-accounts-clef.git'
 });
 
 Package.onUse(function(api) {
