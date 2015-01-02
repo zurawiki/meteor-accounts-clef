@@ -1,0 +1,26 @@
+<template name="configureLoginServiceDialogForClef">
+  <p>
+    First, you'll need to get a Clef account Client ID.
+    Follow these steps:
+  </p>
+  <ol>
+    <!-- TODO -->
+    <li> Visit <a href="https://getclef.com/developer" target="_blank">https://getclef.com/developer</a> and sign in.
+    </li>
+    <li> Click "Create a new integration"</li>
+    <li> Give your app a name and icon.</li>
+    <li> Add
+      <span class="url">
+        {{siteUrl}}
+      </span>
+      as an Application domain.
+    </li>
+    <li> Add
+      <span class="url">
+        {{siteUrl}}_clef/logout
+      </span>
+      as the Logout hook.
+    </li>
+    <li> Allow access to email. Other fields are optional.</li>
+  </ol>
+</template>
