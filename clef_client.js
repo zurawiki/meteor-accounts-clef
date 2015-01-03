@@ -11,8 +11,16 @@ if (Meteor.isClient) {
       }
     }
 
-    Accounts.callLoginMethod({methodArguments: [{clef: getUrlParameter('code')}]})
+    Accounts.callLoginMethod({
+        methodArguments: [{clef: getUrlParameter('code')}],
+        userCallback: function (err, res) {
+          // TODO use iron:router
+          window.location.href = '/';
+        }
+      }
+    )
   }
+
 
   // XXX HACKY: hijacks accounts-ui template
   Template._loginButtonsLoggedOutSingleLoginButton.rendered = function () {
