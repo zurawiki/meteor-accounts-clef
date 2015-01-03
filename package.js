@@ -5,28 +5,33 @@ Package.describe({
   git: 'https://github.com/rzurawicki/meteor-accounts-clef.git'
 });
 
-Package.onUse(function(api) {
+Package.onUse(function (api) {
   api.versionsFrom('1.0.2.1');
-
-  api.use(['underscore', 'service-configuration'], ['client', 'server']);
-  // Export Accounts (etc) to packages using this one.
   api.imply('accounts-base', ['client', 'server']);
-  api.use('oauth2', ['client', 'server']);
-  api.use('oauth', ['client', 'server']);
-  api.use('accounts-oauth', ['client', 'server']);
 
-  api.use('http', ['server']);
+  api.use(['underscore', 'service-configuration', 'oauth', 'accounts-oauth'],
+    ['client', 'server']);
   api.use(['random', 'templating'], 'client');
-
-  //api.use('iron:router', ['client', 'server']);
+  api.use('http', 'server');
 
 
   api.export('Clef');
 
+  //
+  // Common  files
+  //
   api.addFiles('clef_common.js');
-  api.addFiles(['clef_configure.html', 'clef_configure.js'], 'client');
+  //
+  // Client side files
+  //
+  api.addFiles([
+    'clef_configure.html',
+    'clef_configure.js',
+    'clef_client.js',
+    'clef-login-button.css'], 'client');
+  //
+  // Server only files
+  //
   api.addFiles('clef_server.js', 'server');
-  api.addFiles("clef-login-button.css", "client");
-  //api.addFiles('router.js');
 
 });
