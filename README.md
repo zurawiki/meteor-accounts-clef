@@ -1,3 +1,3 @@
 # accounts-clef
 
-git r
+A login service for Clef.
