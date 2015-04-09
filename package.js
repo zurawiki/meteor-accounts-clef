@@ -2,7 +2,7 @@ Package.describe({
   name: 'roger:accounts-clef',
   summary: 'Login service for Clef accounts',
   version: '0.0.1',
-  git: 'https://github.com/rzurawicki/meteor-accounts-clef.git'
+  git: 'https://github.com/zurawiki/meteor-accounts-clef.git'
 });
 
 Package.onUse(function (api) {
